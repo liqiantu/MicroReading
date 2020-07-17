@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "x-book-section": "/components/book-section/book-section"
+  }
+}

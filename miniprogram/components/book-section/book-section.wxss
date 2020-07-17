@@ -1,0 +1,57 @@
+/* app/component/book-section/book-section.wxss */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 92rpx;
+  margin-top: 40rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+}
+.header > image {
+  width: 22rpx;
+  height: 46rpx;
+
+}
+.header > text {
+  font-size: 5.333vw;
+  color: #434343;
+  margin: 0;
+  text-align: left;
+  font-weight: 600;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.list-item {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 15rpx;
+}
+.list-item > image {
+  display: block;
+  text-align: center;
+  border-radius: 1.067vw;
+  width: 208rpx;
+  height: 286rpx;
+}
+.list-item > view {
+  text-align: center;
+  font-size: 3.733vw;
+  color: #222;
+  text-align: left;
+  margin-top: 5rpx;
+}
+
+.footer > view {
+  line-height: 33rpx;
+  color: #cda13f;
+  font-size: 4.267vw;
+  text-align: center;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}

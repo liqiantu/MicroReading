@@ -1,0 +1,20 @@
+<!--app/component/book-section/book-section.wxml-->
+<view>
+  <view class="header">
+    <text>{{sectionName}}</text>
+    <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAkCAYAAABmMXGeAAAAAXNSR0IArs4c6QAAA1ZJREFUSA2dll9I01EUx90fW2xtiBC0PUQPPRUUhFEQhpr9k0pBWkEYSKDOKc3oNbDniAbanCujp/4YlBbVIEcaQU+LeutFEor5UIRUM3Nu9rnDu367u9O5C5dzzvec+73nnt+993dNHR0dbpPJdGd5ebmuoqIiarfb24PB4Bx62c3MyBEIjyE30lvm5+djfX191WUzMlCQ1isEe5LJ5Ove3t7NCl6yKUhjmuhdi4uLk93d3Vs0vjUhs8PhOE/UezWSkuxIp9OTPT09HtW3lm0SAYFAoIpaRlH3aQZMW63W+lAo9EXj00JZUuGhhi6W/IIMD6iR7I6ZysrKhsHBwc+qT2eLmmbbwMDAT6fTeRRjagXKCSbalkqlpqjx9hy4ipLLVMawb+3o4/RGiRlkAv1QJBL5ZMAK1Fym0sOAeY/HcxL7pcQMUny0Sb/fv9OAFagFmcqI/v7+DYlE4hH2KYkZ5Hfq3Dg8PPzRgOXUoqQiglJUIu7TW4WttB8Wi+XI0NBQXMGzJ0rFcjalSFGKswAPcuB/pZp9HGPigm24aqZy/OjoqCUWi4lLRxwUtf0CaCKBt9JR8KGkwyi9Xm/a7Xa3U8cRI76iO5HRrq6uOukrKVMZTKamzs7Om9g+iUnJhH/Qm/l4r9ZFKgkgDjLBRWkb5ILZbD5uMQAlq/F4PFpTU+NggHqkrUy2t6Sa6mYjoxGW/Fvj21oWKcvfnclk3pDVJpWUiZ6su6Y+n28/+1Mc4SqVEHvC5XK1rIuUbdNAduO6DCF8arPZvNx2f0tePoQnWPLzIoT3OHmtglBkXxIpNTwD4WPixR83r1HDCIRtXEBL0rHm8iG8QHCEDHUJXOd4XpZkUuoCpU/cUgHIbhUh7NcRisFFSSG8gv8GvWA17NFLEF4VBLpWMEAEseRrZFewLOqXAe+E8LaOTGJ5pBTbzG0fErwyQEoIl+ht4XBYd7fKsKzMkUJonZ2dvUsm5/IiMCATW+U0N9Az1aezs6T882388x9C2KwJSkIqrjTd80gTThJ8EDuDxiA8rImYw9cE4TuNrygkvn64COE38dxZL6GYyUwm4lWitq8AB3k/fVAdpdgi00klcJp9WMu2WfUVoozJM80s3Q8yRl+gT9Br2TYzyLLbP3ziLljoX8epAAAAAElFTkSuQmCC"></image>
+  </view>
+
+  <view class="list">
+    <block wx:for="{{listArr}}" wx:key="{{item.ID}}">
+     <view class="list-item">
+      <image src="{{item.CoverImages[1]}}"></image>
+      <view>{{item.Name}}</view>
+     </view>
+    </block>
+  </view>
+
+  <view class="footer" wx:if="{{showFooter}}">
+    <view>换一批</view>
+  </view>
+</view>
