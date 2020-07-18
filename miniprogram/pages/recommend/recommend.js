@@ -66,7 +66,13 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  onTap(event) {
+    console.log(event);
+    wx.navigateTo({
+      url: '../detail/detail',
+    })
+    
+  },
   _loadData() {
     wx.cloud.callFunction({
       name: 'getReadInfo',
@@ -107,7 +113,9 @@ Page({
         $url: 'recNewspaper'
       }
     }).then((res) => {
-      newspaperList: res.result.Data.slice(0,2)
+      this.setData({
+        newspaperList: res.result.Data.slice(0,2)
+      })
     })
   }
 })

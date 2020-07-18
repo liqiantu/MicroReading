@@ -9,8 +9,8 @@
   margin-right: 5rpx;
 }
 .header > image {
-  width: 22rpx;
-  height: 46rpx;
+  width: 14rpx;
+  height: 24rpx;
 
 }
 .header > text {

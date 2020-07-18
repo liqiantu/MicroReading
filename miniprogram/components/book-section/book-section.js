@@ -15,6 +15,10 @@ Component({
       showFooter: {
           type: Boolean,
           value: false
+      },
+      type: {
+          type: String,
+          value: ""
       }
   },
 
@@ -28,6 +32,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+      _onTap() {
+          this.triggerEvent('onTap', {
+              sectionType: this.properties.type
+          })
+      }
   }
 })

@@ -46,7 +46,7 @@ exports.main = async(event, context) => {
   })
 
   app.router('recAudio', async(ctx, next) => {
-    options.uri = BASE_URL + "/book/whole/Recomm?kind=1&top=99"
+    options.uri = BASE_URL + "/audio/whole/Recomm?kind=1&top=99"
     ctx.body = await rp(options).then((res) => {      
       return res
     })

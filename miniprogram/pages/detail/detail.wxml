@@ -1,0 +1,59 @@
+<!--pages/detail/detail.wxml-->
+<view class="wrap">
+	<scroll-view class="sv" scroll-y="true">
+		<view class="info">
+			<view class="info-cover">
+				<image src="https://img1.qikan.com/qkimages/xxyk/xxyk202006-m.jpg" mode="aspectFit"></image>
+			</view>
+			<view class="info-right">
+				<text class="info-title">小小说月刊·上半月</text>
+				<text class="info-date">2020年6期</text>
+				<text class="info-desc">《小小说月刊》（Mini  Novel）1993年创刊，是由河北省文联主办的省级文学刊物，它以“文学意境  青春意趣”为办刊理念，围绕着“悦读、感动、成长”的宗旨，用精短的小说察世事万象、悟情感真谛、启睿智心灵、品人生哲理等。曾获中国期刊协会“全国中小学图书馆馆配期刊”、中国新闻出版研究院“数字阅读影响力期刊”等称号。</text>
+			</view>
+		</view>
+
+		<view class="list">
+			<view class="list-header">
+				<text class="list-header-left">期刊列表</text>
+				<text class="list-header-right">共31篇文章</text>
+			</view>
+
+			<view class="list-wrap">
+				<view class="list-item">
+					<text>内容 内容</text>
+				</view>
+				<view class="list-item">
+					<text>内容 内容</text>
+				</view>
+				<view class="list-item">
+					<text>内容 内容</text>
+				</view>
+				<view class="list-item">
+					<text>内容 内容</text>
+				</view>
+				<view class="list-item">
+					<text>内容 内容</text>
+				</view>
+				<view class="list-item">
+					<text>内容 内容</text>
+				</view>
+				<view class="list-item">
+					<text>内容 内容</text>
+				</view>
+				<view class="list-item">
+					<text>内容 内容</text>
+				</view>
+				<view class="list-item">
+					<text>内容 内容</text>
+				</view>
+
+			</view>
+
+		</view>
+	</scroll-view>
+
+	<view class="footer">
+		<text>立即阅读</text>
+	</view>
+
+</view>

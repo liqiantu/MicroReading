@@ -22,9 +22,9 @@
 		</view>
 	</view>
 
-	<x-book-section class="book-section" sectionName="精品期刊" listArr="{{magazineList}}" showFooter="{{true}}" />
-	<x-book-section class="book-section" sectionName="版权图书" listArr="{{bookList}}" showFooter="{{true}}" />
-	<x-book-section class="book-section" sectionName="热听音频" listArr="{{audioList}}" />
-	<x-book-section class="book-section" sectionName="报纸" listArr="{{newspaperList}}" />
+	<x-book-section class="book-section" sectionName="精品期刊" type="magazin" listArr="{{magazineList}}" showFooter="{{true}}" bindonTap="onTap"/>
+	<x-book-section class="book-section" sectionName="版权图书" type="book" listArr="{{bookList}}" showFooter="{{true}}" />
+	<x-book-section class="book-section" sectionName="热听音频" type="audio" listArr="{{audioList}}" />
+	<x-book-section class="book-section" sectionName="报纸" type="newspaper" listArr="{{newspaperList}}" />
 
 </view>
