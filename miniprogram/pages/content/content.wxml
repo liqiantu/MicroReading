@@ -1,0 +1,4 @@
+<!--pages/content/content.wxml-->
+<view class="container">
+  <towxml nodes="{{content}}"/>
+</view>

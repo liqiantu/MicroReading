@@ -5,14 +5,15 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		info: {},
+		catalog: []
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this._loadData(options)		
 	},
 
 	/**
@@ -62,5 +63,56 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+
+	_onTap: function(event) {
+		let idx = event.currentTarget.dataset.idx
+		console.log(idx);
+		console.log(this.data.catalog[idx]);
+		
+		wx.navigateTo({
+			url: `../content/content?articleid=${this.data.catalog[idx].ArticleID}`,
+		})
+	},
+	_loadData(options) {
+		wx.cloud.callFunction({
+			name: 'getReadInfo',
+			data: {
+				magazineguid: options.magazineguid,
+				year: options.year,
+				issue: options.issue,
+				$url: 'getMagazineIssue'
+			}
+		}).then( (res) => {
+			let rt = res.result.Data
+			rt.magazineDate = `${rt.Year}年${rt.Issue}期`
+			rt.CoverImages = rt.CoverImages
+			this.setData({
+				info: rt
+			})
+		})
+
+		wx.cloud.callFunction({
+			name: 'getReadInfo',
+			data: {
+				magazineguid: options.magazineguid,
+				year: options.year,
+				issue: options.issue,
+				$url: 'getCatalog'
+			}
+		}).then( (res) => {
+			let resArr = []
+
+			let data = res.result.Data
+			data.forEach(e => {
+				e.Articles.forEach(e2 => {
+					resArr.push(e2)
+				});
+			});
+			
+			this.setData({
+				catalog: resArr
+			})
+		})
 	}
 })

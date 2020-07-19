@@ -1,5 +1,6 @@
 //app.js
 App({
+  towxml:require('./utils/towxml/index'),
   onLaunch: function () {
     
     if (!wx.cloud) {
@@ -16,5 +17,5 @@ App({
     }
 
     this.globalData = {}
-  }
+  },
 })

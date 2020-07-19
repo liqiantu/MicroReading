@@ -1,3 +1,5 @@
+const { par } = require("../../utils/towxml/parse/parse2/entities/maps/entities");
+
 // pages/recommend/recommend.js
 Page({
 
@@ -67,11 +69,17 @@ Page({
 
   },
   onTap(event) {
-    console.log(event);
+    // console.log(event);
+    let detail = event.detail
+    let url = ''
+    if(detail.sectionType == "magazin") {
+      let item = this.data.magazineList[detail.idx]
+      url = `../detail/detail?magazineguid=${item.ID}&year=${item.Year}&issue=${item.Issue}`
+    }
+
     wx.navigateTo({
-      url: '../detail/detail',
+      url: url
     })
-    
   },
   _loadData() {
     wx.cloud.callFunction({

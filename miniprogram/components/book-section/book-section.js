@@ -32,10 +32,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-      _onTap() {
+      _onTap(event) {
+          const ds = event.currentTarget.dataset
           this.triggerEvent('onTap', {
-              sectionType: this.properties.type
+              sectionType: this.properties.type,
+              idx: ds.idx
           })
+        
       }
   }
 })

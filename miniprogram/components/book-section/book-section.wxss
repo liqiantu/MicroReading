@@ -3,6 +3,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 92rpx;
   margin-top: 40rpx;
   margin-left: 5rpx;
@@ -21,6 +22,7 @@
   font-weight: 600;
 }
 
+/* 普通书籍样式 */
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -29,22 +31,109 @@
 .list-item {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   margin-top: 15rpx;
+  width: 210rpx;
 }
 .list-item > image {
-  display: block;
-  text-align: center;
   border-radius: 1.067vw;
   width: 208rpx;
   height: 286rpx;
 }
-.list-item > view {
+.list text {
   text-align: center;
   font-size: 3.733vw;
   color: #222;
-  text-align: left;
   margin-top: 5rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 音频样式 */
+.audio-list {
+  display: flex;
+  flex-direction: column;
+}
+.audio-list-item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+.audio-cover image {
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 1.067vw;
+  box-shadow: 1.067vw 0.533vw 2.667vw 0 rgba(0,0,0,.06);
+}
+.audiolist-item-r {
+  width: 400rpx;
+  height: 240rpx;
+  margin-left: 30rpx;
+}
+.audiolist-item-title {
+  font-size: 3.733vw;
+  color: #222;
+  margin-top: 5rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.audiolist-item-desc {
+  font-size: 3.7vw;
+  color: #666;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.audiolist-item-duration {
+  font-size: 3.7vw;
+  color: #999;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.audiolist-item-icon {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+/* 报纸样式 */
+.newspaper-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.newspaper-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15rpx;
+  width: 340rpx;
+}
+.newspaper-cover image {
+  width: 300rpx;
+  height: 380rpx;
+  border-radius: 1.067vw;
+}
+.newspaper-title {
+  text-align: center;
+  font-size: 3.733vw;
+  color: #222;
+  margin-top: 5rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .footer > view {

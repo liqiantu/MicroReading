@@ -59,5 +59,27 @@ exports.main = async(event, context) => {
     })
   })
 
+  app.router('getMagazineIssue', async(ctx, next) => {
+    options.uri = BASE_URL + `/magazine/GetMagazineIssue?magazineguid=${event.magazineguid}&year=${event.year}&issue=${event.issue}`
+    ctx.body = await rp(options).then((res) => {      
+      return res
+    })
+  })
+
+  app.router('getCatalog', async(ctx, next) => {
+    options.uri = BASE_URL + `/magazine/article/catalog?&magazineguid=${event.magazineguid}&year=${event.year}&issue=${event.issue}`
+    ctx.body = await rp(options).then((res) => {      
+      return res
+    })
+  })
+
+  app.router('getFullDetail', async(ctx, next) => {
+    options.uri = BASE_URL + `/magazine/article/GetFullDetail?&articleid=${event.articleid}`
+    ctx.body = await rp(options).then((res) => {      
+      return res
+    })
+  })
+
+
   return app.serve()
 }
