@@ -5,8 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: [],
-    activeTab: 0
+    scrollViewHeight: 0
   },
 
   /**
@@ -25,9 +24,17 @@ Page({
     },
     {
       title: "报纸"
-    },
-    ]
-    this.setData({ tabs })
+    }]
+    
+    wx.getSystemInfo({
+      success: (res) => {
+        console.log(res);
+        this.setData({
+          scrollViewHeight: res.windowHeight - 44
+      })
+    }
+  });
+
   },
 
   /**

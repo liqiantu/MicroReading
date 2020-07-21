@@ -1,19 +1,37 @@
 <van-tabs swipeable>
 	<van-tab title="标签 1">
-		<scroll-view scroll-y="true">
+		<scroll-view scroll-y="true" style="height: {{scrollViewHeight}}px">
 			<view class="content">
+				<view class="item">
+					<text class="title">文学文摘</text>
+					<text class="num">73种期刊</text>
+				</view>
 				<view class="item"></view>
-			<view class="item"></view>
-			<view class="item"></view>
-			<view class="item"></view>
-			<view class="item"></view>
-			<view class="item"></view>
-			<view class="item"></view>
-			<view class="item"></view>
-			<view class="item"></view>
-			<view class="item"></view>
-			<view class="item"></view>
-			<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+					<view class="item">
+					<text class="title">文学文摘</text>
+					<text class="num">73种期刊</text>
+				</view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
+				<view class="item"></view>
 			</view>
 		</scroll-view>
 	</van-tab>
