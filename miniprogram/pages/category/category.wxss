@@ -1,1 +1,22 @@
-/* pages/category/category.wxss */
+van-tab {
+
+}
+
+scroll-view {
+	width: 100vw;
+	height: 800rpx;
+}
+
+.content {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100vw;
+	justify-content: center;
+}
+
+.item {
+	width: 150rpx;
+	height: 400rpx;
+	background-color: red;
+	margin: 30rpx;
+}

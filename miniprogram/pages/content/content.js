@@ -6,7 +6,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		content: ""
+		content: {}
 	},
 
 	/**
@@ -25,8 +25,13 @@ Page({
 			let str = res.result.Data.Content
 			str = str.replace(/↵/g,'')
 			let rt = app.towxml(str,'html')
+
+			let data = {}
+			data.article = rt
+			data.title = res.result.Data.Title
+
 			this.setData({
-				content: rt
+				content: data
 			})
 		})
 	},

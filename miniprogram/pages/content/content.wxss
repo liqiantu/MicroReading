@@ -1,1 +1,10 @@
 /* pages/content/content.wxss */
+
+.container text {
+	font-size: 4.8vw;
+	text-align: center;
+	color: #1e1e1e;
+	width: 100%;
+	padding: 5.333vw 0 3.5vw;
+	display: block;
+}

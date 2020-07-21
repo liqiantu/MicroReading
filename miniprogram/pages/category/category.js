@@ -5,14 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tabs: [],
+    activeTab: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    const tabs = [
+     {
+       title: "期刊"
+     },
+     {
+      title: "音频"
+    },
+    {
+      title: "图书"
+    },
+    {
+      title: "报纸"
+    },
+    ]
+    this.setData({ tabs })
   },
 
   /**
@@ -62,5 +77,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
 })

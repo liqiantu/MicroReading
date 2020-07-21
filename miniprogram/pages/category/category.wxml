@@ -1,2 +1,23 @@
-<!--pages/category/category.wxml-->
-
+<van-tabs swipeable>
+	<van-tab title="标签 1">
+		<scroll-view scroll-y="true">
+			<view class="content">
+				<view class="item"></view>
+			<view class="item"></view>
+			<view class="item"></view>
+			<view class="item"></view>
+			<view class="item"></view>
+			<view class="item"></view>
+			<view class="item"></view>
+			<view class="item"></view>
+			<view class="item"></view>
+			<view class="item"></view>
+			<view class="item"></view>
+			<view class="item"></view>
+			</view>
+		</scroll-view>
+	</van-tab>
+	<van-tab title="标签 2">内容 2</van-tab>
+	<van-tab title="标签 3">内容 3</van-tab>
+	<van-tab title="标签 4">内容 4</van-tab>
+</van-tabs>

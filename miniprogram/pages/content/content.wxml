@@ -1,4 +1,5 @@
 <!--pages/content/content.wxml-->
 <view class="container">
-  <towxml nodes="{{content}}"/>
+  <text>{{content.title}}</text>
+  <towxml nodes="{{content.article}}"/>
 </view>

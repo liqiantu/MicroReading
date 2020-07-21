@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/liqiantu/MicroReading#readme",
   "dependencies": {
-    "@miniprogram-component-plus/tabs": "^1.0.0"
+    "@vant/weapp": "^1.4.0"
   }
 }
