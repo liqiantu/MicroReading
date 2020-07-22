@@ -4,7 +4,8 @@
     "pages/category/category",
     "pages/mine/mine",
     "pages/detail/detail",
-    "pages/content/content"
+    "pages/content/content",
+    "pages/categoryDetail/categoryDetail"
   ],
   "window":{
     "backgroundTextStyle":"light",

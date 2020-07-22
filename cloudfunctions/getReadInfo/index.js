@@ -80,6 +80,12 @@ exports.main = async(event, context) => {
     })
   })
 
+  app.router('getAllByKind', async(ctx, next) => {
+    options.uri = BASE_URL + `/category/GetAllByKind?kind=${event.kind}`
+    ctx.body = await rp(options).then((res) => {      
+      return res
+    })
+  })
 
   return app.serve()
 }

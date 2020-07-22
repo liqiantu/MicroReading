@@ -5,36 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    scrollViewHeight: 0
+    scrollViewHeight: 0,
+    active: 2,
+    tabs: [{
+        title: "期刊",
+        kind: 2,
+        data: []
+      },
+      {
+        title: "图书",
+        kind: 3,
+        data: []
+      },
+      {
+        title: "音频",
+        kind: 5,
+        data: []
+      },
+      {
+        title: "报纸",
+        kind: 7,
+        data: []
+      }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const tabs = [
-     {
-       title: "期刊"
-     },
-     {
-      title: "音频"
-    },
-    {
-      title: "图书"
-    },
-    {
-      title: "报纸"
-    }]
-    
     wx.getSystemInfo({
       success: (res) => {
         console.log(res);
         this.setData({
           scrollViewHeight: res.windowHeight - 44
-      })
-    }
-  });
+        })
+      }
+    })
 
+    let firstTab = this.data.tabs[0]
+    this._loadRequest(firstTab.kind, 0)
   },
 
   /**
@@ -85,5 +94,27 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+  onChange: function(e) {
+    let detail = e.detail
+    if (this.data.tabs[detail.index].data.length == 0) {
+      this._loadRequest(detail.name, detail.index)
+    }
+  },
+
+  _loadRequest(kind, index) {
+    wx.cloud.callFunction({
+      name: 'getReadInfo',
+      data: {
+        kind,
+        $url: 'getAllByKind'
+      }
+    }).then( (res) => {
+      var data = `tabs[${index}].data`
+      this.setData({
+        [data]: res.result.Data
+      })
+    })
+  }
 
 })
