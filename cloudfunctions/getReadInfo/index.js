@@ -87,5 +87,12 @@ exports.main = async(event, context) => {
     })
   })
 
+  app.router('ByCategory', async(ctx, next) => {
+    options.uri = BASE_URL + `/magazine/ByCategory?categorycode=${event.code}&pagesize=${event.size}&pageindex=${event.pageIndex}`
+    ctx.body = await rp(options).then((res) => {      
+      return res
+    })
+  })
+
   return app.serve()
 }

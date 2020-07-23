@@ -101,6 +101,12 @@ Page({
       this._loadRequest(detail.name, detail.index)
     }
   },
+  onTap: function(e) {
+    let code = e.currentTarget.dataset.categorycode
+    wx.navigateTo({
+      url: `../categoryDetail/categoryDetail?code=${code}`,
+    })    
+  },
 
   _loadRequest(kind, index) {
     wx.cloud.callFunction({

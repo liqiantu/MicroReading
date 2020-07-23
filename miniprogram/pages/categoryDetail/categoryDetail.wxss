@@ -1,9 +1,5 @@
-scroll-view {
-	width: 100vw;
-}
-
-.content {
-	display: flex;
+.wrap {
+	display: Gr;
 	flex-wrap: wrap;
 	width: 100vw;
 	justify-content: space-around;
@@ -19,17 +15,10 @@ scroll-view {
 	flex-direction: column;
 	align-content: center;
 }
+
+
 text {
 	text-align: center;
 	width: 100%;
 	display: block;
-}
-.title {
-	color: #333;
-	font-size: 4.2vw;
-	margin-top: 48rpx;
-}
-.num {
-	color: #999;
-	font-size: 3.2vw;
 }
