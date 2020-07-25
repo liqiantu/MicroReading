@@ -1,6 +1,15 @@
 /* pages/pastCategory/pastCategory.wxss */
+scroll-view {
+	width: 100vw;
+}
+
+.content {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100vw;
+}
+
 text {
   display: block;
-  height: 2000rpx;
-  background-color: red;
+  height: 200rpx;
 }

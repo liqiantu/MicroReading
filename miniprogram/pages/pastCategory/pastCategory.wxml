@@ -1,12 +1,12 @@
 <van-tabs swipeable bind:change="onChange">
-	<block wx:for="{{6}}">
-		<van-tab title="{{index}}" name="{{index}}">
+	<block wx:for="{{yearList}}">
+		<van-tab title="{{item}}" name="{{index}}">
 			<scroll-view scroll-y="true" style="height: {{scrollViewHeight}}px">
 				<view class="content">
-					<block wx:for="{{5}}">
+					<block wx:for="{{issueList}}">
 						<view class="item" data-categoryCode="{{item.CategoryCode}}" bindtap="onTap">
-							<text class="index">{{item.CategoryName}}</text>
-							<text class="num">{{item.ResourceTotal}}种期刊</text>
+							<text class="index">{{item.Name}}</text>
+							<text class="num">{{item.Year}} {{item.Issue}}</text>
 						</view>
 					</block>
 				</view>

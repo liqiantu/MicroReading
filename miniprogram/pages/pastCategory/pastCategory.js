@@ -1,4 +1,6 @@
 // pages/pastCategory/pastCategory.js
+let magazineId = ""
+let issueMap = new Map()
 Page({
 
   /**
@@ -6,12 +8,15 @@ Page({
    */
   data: {
     scrollViewHeight: 0,
+    yearList: [],
+    issueList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    magazineId = options.id
     console.log(options);
     wx.getSystemInfo({
       success: (res) => {
@@ -22,53 +27,54 @@ Page({
       }
     })
   },
+  	/**
+	 * 生命周期函数--监听页面初次渲染完成
+	 */
+	onReady: function () {
+    this._getIssueYears((res) => {
+      let year = res.result.Data[0]
+      this._getIssues(year)
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+    })
+	},
+  _getIssueYears(callBack) {
+    wx.cloud.callFunction({
+      name: "getReadInfo",
+      data: {
+        id: magazineId,
+        $url: "getMagazineYear"
+      }
+    }).then((res) => {
+      this.setData({
+        yearList: res.result.Data
+      }, ()=> {
+        callBack(res)
+      })
+      
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  _getIssues(year) {
+    wx.cloud.callFunction({
+      name: "getReadInfo",
+      data: {
+        id: magazineId,
+        year,
+        $url: "getMagazineYearIssues"
+      }
+    }).then((res) => {
+      issueMap.set(year, res.result.Data)
+      this.setData({
+        issueList: issueMap.get(year)
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onChange(e) {
+    let year = e.detail.title
+    let issueList = issueMap.get(year)
+    
+    if(issueList == undefined) {
+      this._getIssues(year)
+    }
   }
+
 })
