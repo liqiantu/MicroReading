@@ -96,5 +96,15 @@ Page({
 				list: this.data.list.concat(res.result.Data)
 			})
 		})
+	},
+	itemTap: function(e) {
+		console.log(e);
+		let idx = e.currentTarget.dataset.idx
+		let info = this.data.list[idx]		
+		let url = `../detail/detail?magazineguid=${info.ID}&year=${info.Year}&issue=${info.Issue}`
+
+    wx.navigateTo({
+      url: url
+    })
 	}
 })

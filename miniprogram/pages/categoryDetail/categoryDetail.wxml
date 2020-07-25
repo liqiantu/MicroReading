@@ -1,2 +1,10 @@
-// 奇数时样式参考 blog-card.wxss
-https://www.zhangxinxu.com/wordpress/2019/08/css-flex-last-align/
+<view class="wrap">
+	<block wx:for="{{list}}">
+		<view class="item" bindtap="itemTap" data-idx="{{index}}">
+			<view class="item-contetn">
+				<image src="{{item.CoverImages[1]}}"></image>
+				<text>{{item.Name}}</text>
+			</view>
+		</view>
+	</block>
+</view>
