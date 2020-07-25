@@ -94,5 +94,20 @@ exports.main = async(event, context) => {
     })
   })
 
+  // 过往期刊
+  app.router('getMagazineYear', async(ctx, next) => {
+    options.uri = BASE_URL + `/magazine/years?id=${event.id}`
+    ctx.body = await rp(options).then((res) => {      
+      return res
+    })
+  })
+
+  app.router('getMagazineYearIssues', async(ctx, next) => {
+    options.uri = BASE_URL + `/magazine/Issues?id=${event.id}&year=${event.year}`
+    ctx.body = await rp(options).then((res) => {      
+      return res
+    })
+  })
+
   return app.serve()
 }

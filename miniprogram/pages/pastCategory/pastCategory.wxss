@@ -1,0 +1,6 @@
+/* pages/pastCategory/pastCategory.wxss */
+text {
+  display: block;
+  height: 2000rpx;
+  background-color: red;
+}

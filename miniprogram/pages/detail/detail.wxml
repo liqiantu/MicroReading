@@ -29,8 +29,9 @@
 		</view>
 	</scroll-view>
 
-	<view class="footer">
-		<text>立即阅读</text>
+	<view class="footer" bindtap="_bottomTap">
+		<text>查看过刊</text>
+		<!-- <text>立即阅读</text> -->
 	</view>
 
 </view>

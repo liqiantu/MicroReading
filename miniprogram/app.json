@@ -2,10 +2,11 @@
   "pages":[
     "pages/recommend/recommend",
     "pages/category/category",
+    "pages/categoryDetail/categoryDetail",
     "pages/mine/mine",
     "pages/detail/detail",
     "pages/content/content",
-    "pages/categoryDetail/categoryDetail"
+    "pages/pastCategory/pastCategory"
   ],
   "window":{
     "backgroundTextStyle":"light",

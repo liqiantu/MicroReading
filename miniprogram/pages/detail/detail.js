@@ -1,4 +1,6 @@
 // pages/detail/detail.js
+
+let magazineguid = ""
 Page({
 
 	/**
@@ -13,6 +15,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		magazineguid = options.magazineguid
 		this._loadData(options)		
 	},
 
@@ -114,5 +117,11 @@ Page({
 				catalog: resArr
 			})
 		})
+	},
+	_bottomTap: function(e) {
+		wx.navigateTo({
+			url: `../pastCategory/pastCategory?id=${magazineguid}`,
+		})
 	}
+	
 })

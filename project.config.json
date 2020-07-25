@@ -76,6 +76,20 @@
 					"pathName": "pages/category/category",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/recommend/recommend",
+					"pathName": "pages/recommend/recommend",
+					"query": "id= 38fb1d20-543e-4129-a0e1-8f7ec964a7a5",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/pastCategory/pastCategory",
+					"pathName": "pages/pastCategory/pastCategory",
+					"query": "id= 38fb1d20-543e-4129-a0e1-8f7ec964a7a5",
+					"scene": null
 				}
 			]
 		}
