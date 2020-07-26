@@ -3,10 +3,10 @@
 		<van-tab title="{{item}}" name="{{index}}">
 			<scroll-view scroll-y="true" style="height: {{scrollViewHeight}}px">
 				<view class="content">
-					<block wx:for="{{issueList}}">
-						<view class="item" data-categoryCode="{{item.CategoryCode}}" bindtap="onTap">
-							<text class="index">{{item.Name}}</text>
-							<text class="num">{{item.Year}} {{item.Issue}}</text>
+					<block wx:for="{{issueList[index]}}">
+						<view class="item" data-issue="{{item}}" bindtap="onTap">
+							<image src="{{item.CoverImages[1]}}"></image>
+							<text class="num">第 {{item.Issue}} 期</text>
 						</view>
 					</block>
 				</view>

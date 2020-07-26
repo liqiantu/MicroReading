@@ -20,8 +20,11 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
+	onLoad: function (options) {		
 		CODE = options.code
+		wx.setNavigationBarTitle({
+			title: options.title,
+		})
 		this._loadData(CODE, SIZE, PageIndex)
 	},
 
@@ -79,6 +82,9 @@ Page({
 
 	},
 	_loadData(code, size, pageIndex) {
+		wx.showLoading({
+			title: '加载中',
+		})
 		wx.cloud.callFunction({
 			name: "getReadInfo",
 			data: {
@@ -87,14 +93,21 @@ Page({
 				pageIndex,
 				$url: "ByCategory"
 			}
-		}).then((res) => {
-			PageTotal = res.result.PageTotal
+		}).then((r) => {
+			PageTotal = r.result.PageTotal
 			wx.stopPullDownRefresh({
-				success: (res) => {},
+				success: (res) => {
+					wx.hideLoading({
+						success: (res) => {
+							this.setData({
+								list: this.data.list.concat(r.result.Data)
+							})
+						},
+					})
+					
+				},
 			})
-			this.setData({
-				list: this.data.list.concat(res.result.Data)
-			})
+			
 		})
 	},
 	itemTap: function(e) {

@@ -9,7 +9,25 @@ scroll-view {
 	width: 100vw;
 }
 
-text {
-  display: block;
-  height: 200rpx;
+.item {
+	width: 33.3vw;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	margin-top: 20rpx;
+	margin-bottom: 30rpx;
+	box-sizing: border-box;
+}
+.item image {
+	width: 190rpx;
+	height: 260rpx;
+	border-radius: 1.067vw;
+}
+.item text {
+	width: 190rpx;
+	line-height: 5.3vw;
+	font-size: 3.7vw;
+	text-align: left;
 }

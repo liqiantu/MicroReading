@@ -53,9 +53,12 @@ Page({
     }
   },
   onTap: function(e) {
+    console.log(e)
     let code = e.currentTarget.dataset.categorycode
+    let categoryName = e.currentTarget.dataset.name
+    
     wx.navigateTo({
-      url: `../categoryDetail/categoryDetail?code=${code}`,
+      url: `../categoryDetail/categoryDetail?code=${code}&title=${categoryName}`,
     })    
   },
 

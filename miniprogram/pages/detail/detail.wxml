@@ -29,7 +29,7 @@
 		</view>
 	</scroll-view>
 
-	<view class="footer" bindtap="_bottomTap">
+	<view class="footer" bindtap="_bottomTap" wx:if="{{isShowFooter == 1}}">
 		<text>查看过刊</text>
 		<!-- <text>立即阅读</text> -->
 	</view>

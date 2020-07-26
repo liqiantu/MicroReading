@@ -1,10 +1,8 @@
 <view class="wrap">
 	<block wx:for="{{list}}">
 		<view class="item" bindtap="itemTap" data-idx="{{index}}">
-			<view class="item-contetn">
-				<image src="{{item.CoverImages[1]}}"></image>
-				<text>{{item.Name}}</text>
-			</view>
+			<image src="{{item.CoverImages[1]}}"></image>
+			<text>{{item.Name}}</text>
 		</view>
 	</block>
 </view>

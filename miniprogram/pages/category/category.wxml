@@ -4,7 +4,7 @@
 			<scroll-view scroll-y="true" style="height: {{scrollViewHeight}}px">
 				<view class="content">
 					<block wx:for="{{item.data}}">
-						<view class="item" data-categoryCode="{{item.CategoryCode}}" bindtap="onTap">
+						<view class="item" data-categoryCode="{{item.CategoryCode}}" data-name="{{item.CategoryName}}" bindtap="onTap">
 							<text class="title">{{item.CategoryName}}</text>
 							<text class="num">{{item.ResourceTotal}}种期刊</text>
 						</view>

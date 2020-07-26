@@ -1,6 +1,5 @@
 // pages/pastCategory/pastCategory.js
 let magazineId = ""
-let issueMap = new Map()
 Page({
 
   /**
@@ -17,7 +16,6 @@ Page({
    */
   onLoad: function (options) {
     magazineId = options.id
-    console.log(options);
     wx.getSystemInfo({
       success: (res) => {
         console.log(res);
@@ -54,6 +52,9 @@ Page({
     })
   },
   _getIssues(year) {
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.cloud.callFunction({
       name: "getReadInfo",
       data: {
@@ -62,19 +63,34 @@ Page({
         $url: "getMagazineYearIssues"
       }
     }).then((res) => {
-      issueMap.set(year, res.result.Data)
-      this.setData({
-        issueList: issueMap.get(year)
+      wx.hideLoading({
+        success: (r) => {
+          let idx = this.data.yearList.indexOf(parseInt(year))
+          this.data.issueList[idx] = res.result.Data
+          this.setData({
+            issueList: this.data.issueList
+          })
+        },
       })
     })
   },
   onChange(e) {
+    let idx = e.detail.index
     let year = e.detail.title
-    let issueList = issueMap.get(year)
-    
-    if(issueList == undefined) {
+    console.log(e)
+    if(this.data.issueList[idx] == undefined) {
       this._getIssues(year)
     }
+  },
+  onTap(e) {
+    console.log(e);
+    
+    let issue = e.currentTarget.dataset.issue
+    let url = `../detail/detail?magazineguid=${issue.ID}&year=${issue.Year}&issue=${issue.Issue}&isShowFooter=0`
+
+    wx.navigateTo({
+      url: url
+    })
   }
 
 })

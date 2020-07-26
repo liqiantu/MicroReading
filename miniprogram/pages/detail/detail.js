@@ -8,15 +8,20 @@ Page({
 	 */
 	data: {
 		info: {},
-		catalog: []
+		catalog: [],
+		isShowFooter: 1
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		console.log(options);
 		magazineguid = options.magazineguid
-		this._loadData(options)		
+		this._loadData(options)
+		this.setData({
+			isShowFooter: parseInt(options.isShowFooter == undefined ? 1 : options.isShowFooter)
+		})
 	},
 
 	/**
