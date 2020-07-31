@@ -113,8 +113,11 @@ Page({
 		})
 	},
 	catalogItemTap(e) {
-		let articleID = e.currentTarget.dataset.articleID
+		let articleID = e.currentTarget.dataset.articleid
 		this._loadContent(articleID)
+		this.setData({
+			showCatalog: false
+		})
 	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
