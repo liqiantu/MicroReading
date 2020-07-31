@@ -1,5 +1,32 @@
 <!--pages/content/content.wxml-->
-<view class="container">
-  <text>{{content.title}}</text>
-  <towxml nodes="{{content.article}}"/>
+<view class="wrap">
+	<text class="header-title">{{content.title}}</text>
+	<towxml nodes="{{content.article}}" style="font-size: {{fontSize}}vw" />
 </view>
+
+<view class="bottom">
+	<button
+	 type="default"
+	 size="mini"
+	 disabled="{{!isEnableUp}}"
+	 bindtap="onUpTap"
+	>
+		上一篇
+	</button>
+	<button
+	 type="default"
+	 size="mini"
+	 bindtap="onTap"
+	>
+		目录
+	</button>
+	<button
+	 type="default"
+	 size="mini"
+	 disabled="{{!isEnableNext}}"
+	 bindtap="onNextTap"
+	>
+		下一篇
+	</button>
+</view>
+

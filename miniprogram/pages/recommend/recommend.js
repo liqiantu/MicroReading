@@ -1,5 +1,3 @@
-const { par } = require("../../utils/towxml/parse/parse2/entities/maps/entities");
-
 // pages/recommend/recommend.js
 Page({
 
@@ -7,17 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    magazineList: [],
-    bookList: [],
-    audioList: [],
-    newspaperList: []
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this._loadData()
+    // this._loadData()
+    this._loadAllPromiseRequest()
   },
 
   /**
@@ -69,60 +65,72 @@ Page({
 
   },
   onTap(event) {
-    // console.log(event);
+    console.log(event);
     let detail = event.detail
     let url = ''
     if(detail.sectionType == "magazin") {
-      let item = this.data.magazineList[detail.idx]
+      let item = this.data.list[0].Data[detail.idx]
       url = `../detail/detail?magazineguid=${item.ID}&year=${item.Year}&issue=${item.Issue}`
+      wx.navigateTo({
+        url: url
+      })
     }
-
-    wx.navigateTo({
-      url: url
+  },
+// promise 请求
+  _loadMagazinePromise() {
+    return new Promise((resolve, reject) => {
+      wx.cloud.callFunction({
+        name: 'getReadInfo',
+        data: {
+          $url: 'recMagazine'
+        }
+      }).then((res) => {
+        resolve(res.result)
+      })
     })
   },
-  _loadData() {
-    wx.cloud.callFunction({
-      name: 'getReadInfo',
-      data: {
-        $url: 'recMagazine'
-      }
-    }).then((res) => {
-      this.setData({
-        magazineList: res.result.Data.slice(0,6)
+  _loadBookPromise() {
+    return new Promise((resolve, reject) => {
+      wx.cloud.callFunction({
+        name: 'getReadInfo',
+        data: {
+          $url: 'recBook'
+        }
+      }).then((res) => {
+        resolve(res.result)
       })
     })
-
-    wx.cloud.callFunction({
-      name: 'getReadInfo',
-      data: {
-        $url: 'recBook'
-      }
-    }).then((res) => {
-      this.setData({
-        bookList: res.result.Data.slice(0,6)
+  },
+  _loadAudioPromise() {
+    return new Promise((resolve, reject) => {
+      wx.cloud.callFunction({
+        name: 'getReadInfo',
+        data: {
+          $url: 'recAudio'
+        }
+      }).then((res) => {
+        resolve(res.result)
       })
     })
-
-    wx.cloud.callFunction({
-      name: 'getReadInfo',
-      data: {
-        $url: 'recAudio'
-      }
-    }).then((res) => {
-      this.setData({
-        audioList: res.result.Data.slice(0,3)
+  },
+  _loadNewspaperPromise() {
+    return new Promise((resolve, reject) => {
+      wx.cloud.callFunction({
+        name: 'getReadInfo',
+        data: {
+          $url: 'recNewspaper'
+        }
+      }).then((res) => {
+        resolve(res.result)
       })
     })
-
-    wx.cloud.callFunction({
-      name: 'getReadInfo',
-      data: {
-        $url: 'recNewspaper'
-      }
-    }).then((res) => {
+  },
+  _loadAllPromiseRequest() {
+    const list = [this._loadMagazinePromise(), this._loadBookPromise(), this._loadAudioPromise(), this._loadNewspaperPromise()]
+    Promise.all(list).then( res => {
+      console.log(res)
       this.setData({
-        newspaperList: res.result.Data.slice(0,2)
+        list: res
       })
     })
   }

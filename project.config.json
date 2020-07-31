@@ -97,6 +97,13 @@
 					"pathName": "pages/mine/mine",
 					"query": "id= 38fb1d20-543e-4129-a0e1-8f7ec964a7a5",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/content/content",
+					"pathName": "pages/content/content",
+					"query": "articleid=jswz20200719",
+					"scene": null
 				}
 			]
 		}
