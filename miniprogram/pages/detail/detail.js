@@ -1,6 +1,7 @@
 // pages/detail/detail.js
 
 let magazineguid = ""
+let Options = {}
 Page({
 
 	/**
@@ -17,6 +18,7 @@ Page({
 	 */
 	onLoad: function (options) {
 		console.log(options);
+		Options = options
 		magazineguid = options.magazineguid
 		this._loadData(options)
 		this.setData({
@@ -79,7 +81,7 @@ Page({
 		console.log(this.data.catalog[idx]);
 		
 		wx.navigateTo({
-			url: `../content/content?articleid=${this.data.catalog[idx].ArticleID}`,
+			url: `../content/content?articleid=${this.data.catalog[idx].ArticleID}&magazineguid=${Options.magazineguid}&year=${Options.year}&issue=${Options.issue}`,
 		})
 	},
 	_loadData(options) {

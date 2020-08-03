@@ -1,32 +1,41 @@
 <!--pages/content/content.wxml-->
-<view class="wrap">
+
+<view class="wrap {{showCatalog ? 'preventTouchMove' : ''}}">
 	<text class="header-title">{{content.title}}</text>
 	<towxml nodes="{{content.article}}" style="font-size: {{fontSize}}vw" />
 </view>
 
 <view class="bottom">
-	<button
-	 type="default"
-	 size="mini"
-	 disabled="{{!isEnableUp}}"
-	 bindtap="onUpTap"
-	>
+	<button type="default" size="mini" disabled="{{!isEnableUp}}" bindtap="onUpTap">
 		上一篇
 	</button>
-	<button
-	 type="default"
-	 size="mini"
-	 bindtap="onTap"
-	>
+	<button type="default" size="mini" bindtap="onCatalogTap">
 		目录
 	</button>
-	<button
-	 type="default"
-	 size="mini"
-	 disabled="{{!isEnableNext}}"
-	 bindtap="onNextTap"
-	>
+	<button type="default" size="mini" disabled="{{!isEnableNext}}" bindtap="onNextTap">
 		下一篇
 	</button>
 </view>
 
+<van-popup
+  show="{{ showCatalog }}"
+  position="bottom"
+  custom-style="height: 70%;"
+  bind:close="onPopClose"
+>
+
+<view class="popContent" >
+	<view class="popContent-header">
+		<text>目录</text>
+	</view>
+
+	<scroll-view scroll-y="true">
+		<block wx:for="{{catalogList}}">
+			<view data-articleID="{{item.ArticleID}}"class="popContent-item" bindtap="catalogItemTap">
+				<text>{{item.Title}}</text>
+			</view>
+		</block>
+	</scroll-view>
+</view>
+
+</van-popup>

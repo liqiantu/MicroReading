@@ -1,6 +1,9 @@
 // pages/content/content.js
+
 const app = getApp()
+let Options = {}
 let ResData = {}
+
 Page({
 
 	/**
@@ -8,18 +11,20 @@ Page({
 	 */
 	data: {
 		content: {},
+		catalogList: [],
 		isEnableUp: false,
-		isEnableNext: false
+		isEnableNext: false,
+		showCatalog: false,
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		Options = options
 		this._loadContent(options.articleid)
 	},
 	_loadContent(articleid) {
-		this.data.content = {}
 		wx.showLoading({
 			title: '加载中',
 		})
@@ -41,14 +46,50 @@ Page({
 					data.article = rt
 					data.title = res.result.Data.Title
 
+					console.log(articleid);
+					console.log(ResData);
+
 					this.setData({
-						content: data,
-						isEnableUp: articleid == ResData.PreviousArticle.ArticleID ? false : true,
-						isEnableNext: articleid == ResData.NextArticle.ArticleID ? false : true
+						// 清除上一页内容
+						content: {}
+					}, () => {
+						this.setData({
+							content: data,
+							isEnableUp: ResData.PreviousArticle.ArticleID == "" ? false : true,
+							isEnableNext: ResData.NextArticle.ArticleID == "" ? false : true
+						})
 					})
+
 				}
 			})
 
+		})
+	},
+	_loadCatalogData() {
+		if (this.data.catalogList.length > 0) {
+			return
+		}
+		wx.cloud.callFunction({
+			name: 'getReadInfo',
+			data: {
+				magazineguid: Options.magazineguid,
+				year: Options.year,
+				issue: Options.issue,
+				$url: 'getCatalog'
+			}
+		}).then( (res) => {
+			let resArr = []
+
+			let data = res.result.Data
+			data.forEach(e => {
+				e.Articles.forEach(e2 => {
+					resArr.push(e2)
+				});
+			});
+			
+			this.setData({
+				catalogList: resArr
+			})
 		})
 	},
 	onUpTap(e) {
@@ -59,7 +100,25 @@ Page({
 		let nextArticleid = ResData.NextArticle.ArticleID
 		this._loadContent(nextArticleid)
 	},
-
+	onCatalogTap() {
+		this.setData({
+			showCatalog: true
+		}, () => {
+			this._loadCatalogData()
+		})
+	},
+	onPopClose() {
+		this.setData({
+			showCatalog: false
+		})
+	},
+	catalogItemTap(e) {
+		let articleID = e.currentTarget.dataset.articleid
+		this._loadContent(articleID)
+		this.setData({
+			showCatalog: false
+		})
+	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
