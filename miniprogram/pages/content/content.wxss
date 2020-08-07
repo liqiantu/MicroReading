@@ -35,6 +35,7 @@
 .popContent-header text {
 	line-height: 130rpx;
 	padding-left: 5vw;
+	margin-left: 40rpx;
 	border-left: 1.067vw solid #e3c88c;
 	color: #e3c88c;
 }
