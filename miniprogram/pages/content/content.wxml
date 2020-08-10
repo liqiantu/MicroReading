@@ -17,14 +17,14 @@
 	</button>
 </view>
 
-<van-popup show="{{ showCatalog }}" position="bottom" custom-style="height: 70%;" bind:close="onPopClose">
+<van-popup show="{{ showCatalog }}" position="bottom" custom-style="height: 800rpx;" bind:close="onPopClose">
 
 	<view class="popContent">
 		<view class="popContent-header">
 			<text>目录</text>
 		</view>
 
-		<scroll-view scroll-y="true" class="scroll-class">
+		<scroll-view scroll-y="true" class="popContent-scroll">
 			<block wx:for="{{catalogList}}">
 				<view data-articleID="{{item.ArticleID}}" class="popContent-item" bindtap="catalogItemTap">
 					<text>{{item.Title}}</text>
