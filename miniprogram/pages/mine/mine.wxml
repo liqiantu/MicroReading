@@ -1,4 +1,15 @@
 <view class="wrap">
-	<view class="avatar"><open-data type="userAvatarUrl"></open-data></view>
-  <open-data type="userNickName" class="name"></open-data>
+	<view class="avatar">
+		<open-data type="userAvatarUrl"></open-data>
+	</view>
+	<open-data type="userNickName" class="name"></open-data>
+	<view class="list">
+		<view class="list-item" bindtap="onOneTap">
+			<view class="button">
+				text垂直居中
+			</view>
+		</view>
+		<view class="list-item" bindtap="onOneTap"><text>two</text></view>
+		<view class="list-item" bindtap="onOneTap"><text>three</text></view>
+	</view>
 </view>

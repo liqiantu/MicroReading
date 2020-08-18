@@ -6,7 +6,8 @@
     "pages/mine/mine",
     "pages/detail/detail",
     "pages/content/content",
-    "pages/pastCategory/pastCategory"
+    "pages/pastCategory/pastCategory",
+    "pages/example/pageEx1/pageEx1"
   ],
   "window":{
     "backgroundTextStyle":"light",

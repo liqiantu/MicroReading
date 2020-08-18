@@ -7,6 +7,11 @@ Page({
   data: {
 
   },
+  onOneTap: function (e) {
+    wx.navigateTo({
+      url: '../example/pageEx1/pageEx1',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

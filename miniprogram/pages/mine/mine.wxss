@@ -14,3 +14,30 @@
   text-align: center;
   margin-top: 30rpx;
 }
+
+.list {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 88rpx;
+  margin: 10rpx 0;
+  background-color: blanchedalmond;
+}
+
+.button {
+  /* width:88rpx; */
+  height:44rpx;
+  background:linear-gradient(204deg,rgba(122,125,255,1) 0%,rgba(111,70,232,1) 100%);
+  border-radius:24px;
+  border:1px solid rgba(151,151,151,1);
+  text-align: center;
+  line-height: 43rpx;
+  color: white;
+  padding: 0 25rpx;
+}
