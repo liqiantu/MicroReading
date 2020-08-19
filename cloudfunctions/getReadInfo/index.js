@@ -87,12 +87,22 @@ exports.main = async(event, context) => {
     })
   })
 
+  // 获取杂志列表
   app.router('ByCategory', async(ctx, next) => {
     options.uri = BASE_URL + `/magazine/ByCategory?categorycode=${event.code}&pagesize=${event.size}&pageindex=${event.pageIndex}`
     ctx.body = await rp(options).then((res) => {      
       return res
     })
   })
+
+  // 获取报纸列表
+  app.router('ByCategoryNewspaper', async(ctx, next) => {
+    options.uri = BASE_URL + `/newspaper/whole/ByCategory?categorycode=${event.code}&pagesize=${event.size}&pageindex=${event.pageIndex}`
+    ctx.body = await rp(options).then((res) => {      
+      return res
+    })
+  })
+
 
   // 过往期刊
   app.router('getMagazineYear', async(ctx, next) => {

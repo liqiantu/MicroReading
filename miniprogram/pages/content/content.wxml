@@ -1,6 +1,6 @@
 <!--pages/content/content.wxml-->
 
-<view class="wrap {{showCatalog ? 'preventTouchMove' : ''}}">
+<view class="wrap">
 	<text class="header-title">{{content.title}}</text>
 	<towxml nodes="{{content.article}}" style="font-size: {{fontSize}}vw" />
 </view>
@@ -17,20 +17,23 @@
 	</button>
 </view>
 
-<van-popup show="{{ showCatalog }}" position="bottom" custom-style="height: 800rpx;" bind:close="onPopClose">
-
-	<view class="popContent">
+<van-popup show="{{ showCatalog }}" position="bottom" custom-style="height: 830rpx;" bind:close="onPopClose">
+	<view class="popContent" bindtouchmove="onPopContentTouchMove">
 		<view class="popContent-header">
 			<text>目录</text>
 		</view>
 
 		<scroll-view scroll-y="true" class="popContent-scroll">
 			<block wx:for="{{catalogList}}">
-				<view data-articleID="{{item.ArticleID}}" class="popContent-item" bindtap="catalogItemTap">
-					<text>{{item.Title}}</text>
+				<view class="popContent-item">
+					<text class="popContent-item-column">{{item.Column}}</text>
+					<block wx:for="{{item.Articles}}" wx:for-item="Article">
+					  <view data-articleID="{{Article.ArticleID}}" bindtap="catalogItemTap" class="popContent-item-article">
+						  <text>{{Article.Title}}</text>
+						</view>
+					</block>
 				</view>
 			</block>
 		</scroll-view>
 	</view>
-
 </van-popup>

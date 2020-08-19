@@ -8,6 +8,9 @@ let PageTotal = 0
 // 总个数
 let ItemCount = 0
 let CODE = 0
+// tag index 判断期刊 图书 音频 报纸 来源
+let TagIndex = 0
+
 Page({
 
 	/**
@@ -23,6 +26,8 @@ Page({
 	 */
 	onLoad: function (options) {		
 		CODE = options.code
+		TagIndex = options.tagIndex
+
 		wx.setNavigationBarTitle({
 			title: options.title,
 		})
@@ -86,13 +91,21 @@ Page({
 		this.setData({
 			isShow: true
 		})
+
+		let url = ""
+		if (TagIndex == 3) {
+			url = "ByCategoryNewspaper"
+		}else {
+			url = "ByCategory"
+		}
+
 		wx.cloud.callFunction({
 			name: "getReadInfo",
 			data: {
 				code,
 				size,
 				pageIndex,
-				$url: "ByCategory"
+				$url: url
 			}
 		}).then((r) => {
 			PageTotal = r.result.PageTotal

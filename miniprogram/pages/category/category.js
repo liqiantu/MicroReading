@@ -1,6 +1,8 @@
 // pages/category/category.js
-Page({
 
+let CurrTagIndex = 0
+
+Page({
   /**
    * 页面的初始数据
    */
@@ -47,7 +49,9 @@ Page({
   },
 
   onChange: function(e) {
+    console.log(e)
     let detail = e.detail
+    CurrTagIndex = detail.index
     if (this.data.tabs[detail.index].data.length == 0) {
       this._loadRequest(detail.name, detail.index)
     }
@@ -58,7 +62,7 @@ Page({
     let categoryName = e.currentTarget.dataset.name
     
     wx.navigateTo({
-      url: `../categoryDetail/categoryDetail?code=${code}&title=${categoryName}`,
+      url: `../categoryDetail/categoryDetail?code=${code}&title=${categoryName}&tagIndex=${CurrTagIndex}`,
     })    
   },
 

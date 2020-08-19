@@ -102,10 +102,16 @@ text {
 	background-color: white;
 	border-bottom: 1px solid #eee;
 }
-.list-item > text {
-	color: #333;
-	font-size: 4.2vw;
-	padding: 5.3vw;
+
+.list-item-column {
+	color: #e3c88c;
+	font-size: 4.4vw;
+	margin-left: 40rpx;
+	margin-top: 15rpx;
+}
+.list-item-article {
+	margin: 15rpx 80rpx;
+	font-size: 3.8vw;
 }
 
 .footer {

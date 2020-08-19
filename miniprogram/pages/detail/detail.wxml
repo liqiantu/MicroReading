@@ -19,11 +19,17 @@
 			</view>
 
 			<view class="list-wrap">
-				<block wx:for="{{catalog}}" wx:key="index">
-					<view class="list-item" bindtap="_onTap" data-idx="{{index}}">
-						<text>{{item.Title}}</text>
-					</view>
-				</block>
+				<block wx:for="{{catalog}}">
+				<view class="list-item">
+					<text class="list-item-column">{{item.Column}}</text>
+					<block wx:for="{{item.Articles}}" wx:for-item="Article">
+					  <view bindtap="_onTap" data-articleID="{{Article.ArticleID}}" class="list-item-article">
+						  <text>{{Article.Title}}</text>
+						</view>
+					</block>
+				</view>
+			</block>
+
 			</view>
 
 		</view>

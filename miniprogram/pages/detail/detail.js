@@ -76,12 +76,10 @@ Page({
 	},
 
 	_onTap: function(event) {
-		let idx = event.currentTarget.dataset.idx
-		console.log(idx);
-		console.log(this.data.catalog[idx]);
+		let articleID = event.currentTarget.dataset.articleid
 		
 		wx.navigateTo({
-			url: `../content/content?articleid=${this.data.catalog[idx].ArticleID}&magazineguid=${Options.magazineguid}&year=${Options.year}&issue=${Options.issue}`,
+			url: `../content/content?articleid=${articleID}&magazineguid=${Options.magazineguid}&year=${Options.year}&issue=${Options.issue}`,
 		})
 	},
 	_loadData(options) {
@@ -111,17 +109,17 @@ Page({
 				$url: 'getCatalog'
 			}
 		}).then( (res) => {
-			let resArr = []
+			// let resArr = []
 
-			let data = res.result.Data
-			data.forEach(e => {
-				e.Articles.forEach(e2 => {
-					resArr.push(e2)
-				});
-			});
+			// let data = res.result.Data
+			// data.forEach(e => {
+			// 	e.Articles.forEach(e2 => {
+			// 		resArr.push(e2)
+			// 	});
+			// });
 			
 			this.setData({
-				catalog: resArr
+				catalog: res.result.Data
 			})
 		})
 	},

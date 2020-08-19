@@ -78,17 +78,17 @@ Page({
 				$url: 'getCatalog'
 			}
 		}).then( (res) => {
-			let resArr = []
+			// let resArr = []
 
-			let data = res.result.Data
-			data.forEach(e => {
-				e.Articles.forEach(e2 => {
-					resArr.push(e2)
-				});
-			});
+			// let data = res.result.Data
+			// data.forEach(e => {
+			// 	e.Articles.forEach(e2 => {
+			// 		resArr.push(e2)
+			// 	});
+			// });
 			
 			this.setData({
-				catalogList: resArr
+				catalogList: res.result.Data
 			})
 		})
 	},
@@ -111,6 +111,9 @@ Page({
 		this.setData({
 			showCatalog: false
 		})
+	},
+	// 添加move事件，防止页面滚动事件穿透
+	onPopContentTouchMove() {
 	},
 	catalogItemTap(e) {
 		let articleID = e.currentTarget.dataset.articleid
