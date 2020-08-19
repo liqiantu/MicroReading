@@ -5,4 +5,6 @@
 			<text>{{item.Name}}</text>
 		</view>
 	</block>
+
+	<load-more isShow="{{isShow}}" />
 </view>

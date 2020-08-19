@@ -14,7 +14,8 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		list: []
+		list: [],
+		isShow: false
 	},
 
 	/**
@@ -82,8 +83,8 @@ Page({
 
 	},
 	_loadData(code, size, pageIndex) {
-		wx.showLoading({
-			title: '加载中',
+		this.setData({
+			isShow: true
 		})
 		wx.cloud.callFunction({
 			name: "getReadInfo",
@@ -95,19 +96,11 @@ Page({
 			}
 		}).then((r) => {
 			PageTotal = r.result.PageTotal
-			wx.stopPullDownRefresh({
-				success: (res) => {
-					wx.hideLoading({
-						success: (res) => {
-							this.setData({
-								list: this.data.list.concat(r.result.Data)
-							})
-						},
-					})
-					
-				},
+			this.setData({
+				list: this.data.list.concat(r.result.Data),
+				isShow: false
 			})
-			
+
 		})
 	},
 	itemTap: function(e) {

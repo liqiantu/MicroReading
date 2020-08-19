@@ -1,0 +1,4 @@
+<!--components/load-more/load-more.wxml-->
+<view class="wrap" wx:if="{{isShow}}">
+  加载中
+</view>

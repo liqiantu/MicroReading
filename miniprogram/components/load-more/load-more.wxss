@@ -1,0 +1,8 @@
+/* components/load-more/load-more.wxss */
+.wrap {
+  width: 100vw;
+  height: 88rpx;
+  background-color: #cda13f;
+  line-height: 88rpx;
+  text-align: center;
+}
