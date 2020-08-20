@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "x-book-section": "/components/book-section/book-section"
+    "x-book-section": "/components/book-section/book-section",
+    "x-alert-center": "/components/alert-center/alert-center"
   },
   "navigationBarTitleText": "首页"
 }

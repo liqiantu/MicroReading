@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    list: [],
+    isShowAlert: false
   },
 
   /**
@@ -76,6 +77,12 @@ Page({
       })
     }
   },
+  onAdTap(e) {
+    this.setData({
+      isShowAlert: true
+    })
+  },
+
 // promise 请求
   _loadMagazinePromise() {
     return new Promise((resolve, reject) => {

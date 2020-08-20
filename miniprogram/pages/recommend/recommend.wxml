@@ -5,7 +5,7 @@
 		<input placeholder="搜名称试试" confirm-type="搜索"></input>
 	</view>
 
-	<image class="adImg" src="https://ntdzwx.dps.qikan.com/Template/WeChatLibrary4/img/defaultBanner.c260fe2c.png"></image>
+	<image class="adImg" src="https://ntdzwx.dps.qikan.com/Template/WeChatLibrary4/img/defaultBanner.c260fe2c.png" bindtap="onAdTap"></image>
 
 	<view class="category-wrap">
 		<view class="category-sub">
@@ -28,3 +28,7 @@
 	<x-book-section class="book-section" sectionName="报纸" type="newspaper" listArr="{{list[3].Data}}" bindonTap="onTap"/>
 
 </view>
+
+<x-alert-center isShow="{{isShowAlert}}" content-class="alert-content">
+	sdioasudoiasudoias
+</x-alert-center>

@@ -77,16 +77,7 @@ Page({
 				issue: Options.issue,
 				$url: 'getCatalog'
 			}
-		}).then( (res) => {
-			// let resArr = []
-
-			// let data = res.result.Data
-			// data.forEach(e => {
-			// 	e.Articles.forEach(e2 => {
-			// 		resArr.push(e2)
-			// 	});
-			// });
-			
+		}).then( (res) => {			
 			this.setData({
 				catalogList: res.result.Data
 			})
@@ -113,8 +104,9 @@ Page({
 		})
 	},
 	// 添加move事件，防止页面滚动事件穿透
-	onPopContentTouchMove() {
-	},
+	// onPopContentTouchMove() {
+	// 	return
+	// },
 	catalogItemTap(e) {
 		let articleID = e.currentTarget.dataset.articleid
 		this._loadContent(articleID)

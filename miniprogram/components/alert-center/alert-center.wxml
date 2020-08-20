@@ -1,0 +1,6 @@
+<!--components/alert-center/alert-center.wxml-->
+<view class="bg" catchtouchmove="bgTouchMove" catchtap="onBgTap" hidden="{{!isShow}}">
+  <view class="content content-class" catchtap="selectCancle">
+    <slot></slot>
+  </view>
+</view>

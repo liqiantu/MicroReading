@@ -18,7 +18,7 @@
 </view>
 
 <van-popup show="{{ showCatalog }}" position="bottom" custom-style="height: 830rpx;" bind:close="onPopClose">
-	<view class="popContent" bindtouchmove="onPopContentTouchMove">
+	<view class="popContent" catchtouchmove='true'>
 		<view class="popContent-header">
 			<text>目录</text>
 		</view>
