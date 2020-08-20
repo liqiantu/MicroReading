@@ -104,6 +104,10 @@ text {
 }
 
 .list-item-column {
+	/* position: -webkit-sticky;
+  position: sticky;
+	top: 10rpx;
+	background-color: white; */
 	color: #e3c88c;
 	font-size: 4.4vw;
 	margin-left: 40rpx;

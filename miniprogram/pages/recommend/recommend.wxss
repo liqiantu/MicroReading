@@ -9,6 +9,7 @@
 }
 
 .input-wrap {
+  background-color: white;
   box-shadow: 0 0.533vw 5.333vw 0 hsla(0,0%,75%,.45);
   border-radius: 15rpx;
   margin-top: 20rpx;
@@ -18,7 +19,6 @@
 }
 
 .input-wrap image {
-  /* display: inline-block; */
   width: 34rpx;
   height: 34rpx;
   margin-left: 20rpx;
@@ -36,6 +36,11 @@
 }
 
 .category-wrap {
+  /* 添加吸顶效果 */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10rpx;
+  background-color: white;
   box-shadow: 0 0.533vw 5.333vw 0 hsla(0,0%,75%,.45);
   border-radius: 15rpx;
   margin-top: 20rpx;
