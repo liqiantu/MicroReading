@@ -1,0 +1,7 @@
+<!--components/pop-bottom/pop-bottom.wxml-->
+<view class="{{isShow ? 'bg' : ''}}" bindtap="onBgTap">
+	<view class="wrap {{isShow ? 'show' : 'hide'}}">
+		<view class="content" hidden="{{!isShow}}">
+		</view>
+	</view>
+</view>

@@ -1,0 +1,37 @@
+/* components/pop-bottom/pop-bottom.wxss */
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(7, 5, 5, 0.5)
+}
+
+.wrap {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  /* background-color: lightblue; */
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 500rpx;
+  background-color: yellow;
+}
+
+.show {
+  top: 0;
+  transition: top 0.6s ease 0.0s;
+}
+
+.hide {
+  top: 100vh;
+  transition: top 0.6s ease 0.0s;
+}

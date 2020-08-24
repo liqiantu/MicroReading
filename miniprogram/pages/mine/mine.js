@@ -5,11 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isShow: false
   },
   onOneTap: function (e) {
-    wx.navigateTo({
-      url: '../example/pageEx1/pageEx1',
+    // wx.navigateTo({
+    //   url: '../example/pageEx1/pageEx1',
+    // })
+    this.setData({
+      isShow: true
     })
   },
 

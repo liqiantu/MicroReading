@@ -13,3 +13,5 @@
 		<view class="list-item" bindtap="onOneTap"><text>three</text></view>
 	</view>
 </view>
+
+<x-pop isShow="{{isShow}}"/>
