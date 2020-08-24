@@ -1,6 +1,6 @@
 # MicroReading
 
-1.上传cloudfunctions里getReadInfo云函数
+1.上传cloudfunctions里getReadInfo云函数  
 2.运行
 
 <img src = 'screenshot/1.png'  width="30%" height="30%" margin="20px"></img>
