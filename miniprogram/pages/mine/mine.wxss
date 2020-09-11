@@ -6,13 +6,14 @@
 }
 
 .avatar {
+  margin-top: 30rpx;
   width: 240rpx;
   height: 240rpx;
 }
 
 .name {
   text-align: center;
-  margin-top: 30rpx;
+  margin-top: 15rpx;
 }
 
 .list {
@@ -39,5 +40,5 @@
   text-align: center;
   line-height: 43rpx;
   color: white;
-  padding: 0 25rpx;
+  padding: 10rpx 25rpx;
 }

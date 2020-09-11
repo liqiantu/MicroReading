@@ -1,26 +1,48 @@
-// pages/mine/mine.js
+// pages/example/Demo1/Demo1.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isShow: false
+    currIdx: 0,
+    isShowLoadMore: false,
+    listData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   },
-  on1Tap: function (e) {
-    // wx.navigateTo({
-    //   url: '../example/pageEx1/pageEx1',
-    // })
+  onChange(e) {
+    console.log(e)
     this.setData({
-      isShow: true
+      currIdx: e.detail.current
     })
   },
-  onSegmentTap(e) {
-    wx.navigateTo({
-      url: '../example/Demo1/Demo1',
+  oneTap1(e) {
+    this.setData({
+      currIdx: 0
     })
   },
+  oneTap2(e) {
+    this.setData({
+      currIdx: 1
+    })
+  },
+  onBottom(e) {
+    console.log(e)
 
+    if (e.type == "scrolltolower") {
+      this.setData({
+        isShowLoadMore: true
+      })
+
+      setTimeout(() => {
+        console.log("timeOut")
+        this.data.listData = this.data.listData.concat([1, 2, 3])
+        this.setData({
+          listData: this.data.listData,
+          isShowLoadMore: false
+        })
+      }, 1500)
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

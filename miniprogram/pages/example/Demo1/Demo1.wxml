@@ -1,0 +1,34 @@
+<!--pages/example/Demo1/Demo1.wxml-->
+
+
+<view class="wrap">
+	<view class="button-wrap">
+		<view class="button-content">
+			<button class="mini-btn" type="{{currIdx == 0 ? 'primary' : 'default'}}" size="mini" bindtap="oneTap1">按钮</button>
+			<button class="mini-btn" type="{{currIdx == 1 ? 'primary' : 'default'}}" size="mini" bindtap="oneTap2">按钮</button>
+		</view>
+	</view>
+
+	<view class="swiper-wrap">
+		<swiper bindchange="onChange" current="{{currIdx}}">
+			<swiper-item>
+				<scroll-view scroll-y="true" paging-enabled="true" bindscrolltolower="onBottom">
+					<block wx:for="{{listData}}">
+						<view class="list-item">
+							{{item}}
+						</view>
+					</block>
+					<view class="load-more" wx:if="{{isShowLoadMore}}">
+						加载更多
+					</view>
+				</scroll-view>
+			</swiper-item>
+			<swiper-item>
+				<view class="swiper-item">
+					22222
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+
+</view>

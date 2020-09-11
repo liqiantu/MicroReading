@@ -7,7 +7,8 @@
     "pages/detail/detail",
     "pages/content/content",
     "pages/pastCategory/pastCategory",
-    "pages/example/pageEx1/pageEx1"
+    "pages/example/pageEx1/pageEx1",
+    "pages/example/Demo1/Demo1"
   ],
   "window":{
     "backgroundTextStyle":"light",

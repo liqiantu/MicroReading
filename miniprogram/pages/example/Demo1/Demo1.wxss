@@ -1,0 +1,43 @@
+/* pages/example/Demo1/Demo1.wxss */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+}
+.button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.swiper-wrap {
+  height: 90vh;
+}
+
+swiper {
+  width: 100vw;
+  height: 100%;  
+}
+
+scroll-view {
+  height: 100%;
+  width: 100vw;
+}
+
+.list-item {
+  color: black;
+  margin: 15rpx;
+  background-color: red;
+  height: 160rpx;
+  line-height: 160rpx;
+  text-align: center;
+}
+
+.load-more {
+  height: 100rpx;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  line-height: 88rpx;
+}

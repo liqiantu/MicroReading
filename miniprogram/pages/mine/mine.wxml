@@ -4,13 +4,13 @@
 	</view>
 	<open-data type="userNickName" class="name"></open-data>
 	<view class="list">
-		<view class="list-item" bindtap="onOneTap">
+		<view class="list-item" bindtap="on1Tap">
 			<view class="button">
 				text垂直居中
 			</view>
 		</view>
-		<view class="list-item" bindtap="onOneTap"><text>two</text></view>
-		<view class="list-item" bindtap="onOneTap"><text>three</text></view>
+		<view class="list-item" bindtap="onSegmentTap"><text>segment</text></view>
+		<view class="list-item" bindtap="on3Tap"><text>three</text></view>
 	</view>
 </view>
 

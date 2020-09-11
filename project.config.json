@@ -104,6 +104,12 @@
 					"pathName": "pages/content/content",
 					"query": "articleid=kxxs20200827",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/example/Demo1/Demo1",
+					"pathName": "pages/example/Demo1/Demo1",
+					"scene": null
 				}
 			]
 		}
