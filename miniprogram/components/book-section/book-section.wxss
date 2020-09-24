@@ -26,13 +26,14 @@
 .list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-around; */
 }
 .list-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 15rpx;
+  margin-right: 20rpx;
   width: 210rpx;
 }
 .list-item > image {
@@ -88,9 +89,13 @@
   color: #666;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.audio-info-wrapper  {
+  display: flex;
+  justify-content: space-between;
 }
 .audiolist-item-duration {
   font-size: 3.7vw;
