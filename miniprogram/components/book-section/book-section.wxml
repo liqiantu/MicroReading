@@ -8,7 +8,7 @@
 	<view class="list" wx:if="{{type == 'magazin'}}">
 		<block wx:for="{{list}}" wx:key="{{item.ID}}">
 			<view class="list-item" bindtap="_onTap" data-idx="{{index}}">
-				<image src="{{item.CoverImages[1]}}"></image>
+				<image src="{{item.CoverImages[1]}}" mode="aspectFill"></image>
 				<text>{{item.Name}}</text>
 			</view>
 		</block>
@@ -17,7 +17,7 @@
 	<view class="list" wx:if="{{type == 'book'}}">
 		<block wx:for="{{list}}" wx:key="{{item.ID}}">
 			<view class="list-item" bindtap="_onTap" data-idx="{{index}}">
-				<image src="{{item.CoverImage}}"></image>
+				<image src="{{item.CoverImage}}" mode="aspectFill"></image>
 				<text>{{item.Name}}</text>
 			</view>
 		</block>
@@ -27,7 +27,7 @@
 		<block wx:for="{{list}}" wx:key="{{item.ID}}">
 			<view class="audio-list-item" bindtap="_onTap" data-idx="{{index}}">
 				<view class="audio-cover">
-					<image src="{{item.ImageUrl}}"></image>
+					<image src="{{item.ImageUrl}}" mode="aspectFill"></image>
 				</view>
 				<view class="audiolist-item-r">
 					<text class="audiolist-item-title">{{item.Name}}</text>
@@ -45,7 +45,7 @@
 		<block wx:for="{{list}}" wx:key="{{item.ID}}">
 			<view class="newspaper-list-item" bindtap="_onTap" data-idx="{{index}}">
 				<view class="newspaper-cover">
-					<image src="{{item.CoverImgURL}}"></image>
+					<image src="{{item.CoverImgURL}}" mode="aspectFill"></image>
 				</view>
 				<text class="newspaper-title">{{item.Name}}</text>
 			</view>
