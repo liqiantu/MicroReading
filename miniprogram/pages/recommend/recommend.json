@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "x-recommend-section": "/components/recommend-section/recommend-section",
     "x-book-section": "/components/book-section/book-section",
     "x-alert-center": "/components/alert-center/alert-center"
   },

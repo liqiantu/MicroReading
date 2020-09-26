@@ -71,3 +71,9 @@
   background-color: red;
   color: white;
 }
+
+.magazinType {
+  color: red;
+  background-color: yellow;
+  height: 300rpx;
+}
