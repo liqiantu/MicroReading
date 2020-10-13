@@ -22,10 +22,10 @@
 		</view>
 	</view>
 
-	<x-book-section class="book-section" sectionName="精品期刊" type="magazin" listArr="{{list[0].Data}}" showFooter="{{true}}" bindonTap="onTap"/>
-	<x-book-section class="book-section" sectionName="版权图书" type="book" listArr="{{list[1].Data}}" showFooter="{{true}}" bindonTap="onTap"/>
-	<x-book-section class="book-section" sectionName="热听音频" type="audio" listArr="{{list[2].Data}}" bindonTap="onTap"/>
-	<x-book-section class="book-section" sectionName="报纸" type="newspaper" listArr="{{list[3].Data}}" bindonTap="onTap"/>
+	<x-book-section class="book-section" sectionName="Magazine" type="magazin" listArr="{{list[0].Data}}" showFooter="{{true}}" bindonTap="onTap"/>
+	<x-book-section class="book-section" sectionName="Book" type="book" listArr="{{list[1].Data}}" showFooter="{{true}}" bindonTap="onTap"/>
+	<x-book-section class="book-section" sectionName="Audio" type="audio" listArr="{{list[2].Data}}" bindonTap="onTap"/>
+	<x-book-section class="book-section" sectionName="Newspaper" type="newspaper" listArr="{{list[3].Data}}" bindonTap="onTap"/>
 	
 	<!-- <x-recommend-section sectionName="精品期刊" showFooter="{{true}}">
 		<view class="magazinType">

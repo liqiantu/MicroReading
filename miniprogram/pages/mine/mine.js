@@ -1,6 +1,6 @@
 // pages/mine/mine.js
 
-import { AppVersion, testGetInfo } from '../../utils/util'
+import { AppVersion, testGetInfo, test1 } from '../../utils/util'
 
 Page({
 
@@ -29,7 +29,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(this.data.version);
+    // const p1 = test1()
+    // p1.then(res => {
+    //   console.log(res);
+    // })
+
+    // p1.then(res => {
+    //   console.log(res);
+    // })
     
   },
 
@@ -37,9 +44,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    testGetInfo((res) => {
-      console.log(res)
-    })
   },
 
   /**

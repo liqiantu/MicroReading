@@ -4,7 +4,8 @@
 	</view>
 	<open-data type="userNickName" class="name"></open-data>
 	version {{AppVersion}}
-	<view class="list">
+	
+	<!-- <view class="list">
 		<view class="list-item" bindtap="on1Tap">
 			<view class="button">
 				底部弹窗
@@ -12,7 +13,7 @@
 		</view>
 		<view class="list-item" bindtap="onSegmentTap"><text>segment</text></view>
 		<view class="list-item" bindtap="on3Tap"><text>three</text></view>
-	</view>
+	</view> -->
 </view>
 
 <x-pop isShow="{{isShow}}"/>

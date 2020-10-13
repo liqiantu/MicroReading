@@ -11,7 +11,7 @@
 //   getArticleFontSize
 // }
 
-export const AppVersion = "1.0.0"
+export const AppVersion = "1.0.2"
 
 export function testGetInfo(callBack) {
   wx.getSystemInfo({
@@ -19,4 +19,13 @@ export function testGetInfo(callBack) {
       callBack(res)
     },
   })
+}
+
+export function test1() {
+  const promise = new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve('succ')
+    },1500)
+  })
+  return promise
 }
