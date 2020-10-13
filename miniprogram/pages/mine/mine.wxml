@@ -3,10 +3,11 @@
 		<open-data type="userAvatarUrl"></open-data>
 	</view>
 	<open-data type="userNickName" class="name"></open-data>
+	version {{AppVersion}}
 	<view class="list">
 		<view class="list-item" bindtap="on1Tap">
 			<view class="button">
-				text垂直居中
+				底部弹窗
 			</view>
 		</view>
 		<view class="list-item" bindtap="onSegmentTap"><text>segment</text></view>

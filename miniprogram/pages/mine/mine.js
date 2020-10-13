@@ -1,11 +1,15 @@
 // pages/mine/mine.js
+
+import { AppVersion, testGetInfo } from '../../utils/util'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isShow: false
+    isShow: false,
+    AppVersion
   },
   on1Tap: function (e) {
     // wx.navigateTo({
@@ -25,14 +29,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(this.data.version);
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    testGetInfo((res) => {
+      console.log(res)
+    })
   },
 
   /**
