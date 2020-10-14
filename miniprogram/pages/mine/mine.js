@@ -1,7 +1,7 @@
 // pages/mine/mine.js
 
-import { AppVersion, testGetInfo, test1 } from '../../utils/util'
-
+import { AppVersion, testGetInfo, test1, obj1 } from '../../utils/util'
+const STEP = 10
 Page({
 
   /**
@@ -9,7 +9,9 @@ Page({
    */
   data: {
     isShow: false,
-    AppVersion
+    AppVersion,
+    bottomH: 0,
+    progressBarWidth: 0
   },
   on1Tap: function (e) {
     // wx.navigateTo({
@@ -38,8 +40,40 @@ Page({
     //   console.log(res);
     // })
     
-  },
+    // getApp.pa
+    // console.log(obj1['name']);
 
+    wx.getSystemInfo({
+      success: (res) => {
+        console.info(res.windowHeight);
+        let height = res.windowHeight;
+
+        let query = wx.createSelectorQuery()
+        query.select('#top').boundingClientRect().exec((rects) => {
+          console.log(rects);
+          this.setData({
+            bottomH: res.windowHeight - rects[0].bottom
+          });
+
+        })
+      },
+    })
+  },
+  plusTap() {
+    this.setData({
+      progressBarWidth: this.data.progressBarWidth >= 100 ? 100 : this.data.progressBarWidth + STEP
+    })
+  },
+  reduceTap() {
+    this.setData({
+      progressBarWidth: this.data.progressBarWidth == 0 ? 0 : this.data.progressBarWidth - STEP
+    })
+  },
+  on3Tap() {
+    wx.navigateTo({
+      url: '../example/pageEx1/pageEx1',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

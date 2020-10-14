@@ -1,2 +1,8 @@
 <!--pages/example/pageEx1/pageEx1.wxml-->
-<text>pages/example/pageEx1/pageEx1.wxml</text>
+
+<view class="wrap">
+	<view class="item1">111</view>
+	<view class="item2">222</view>
+	<view class="item3">333</view>
+
+</view>

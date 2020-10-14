@@ -1,1 +1,31 @@
 /* pages/example/pageEx1/pageEx1.wxss */
+.wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item1 {
+  width: 50vw;
+  height: 50vw;
+  background-color: red;
+}
+.item2 {
+  width: 50vw;
+  height: 50vw;
+  background-color: green;
+}
+.item3 {
+  width: 50vw;
+  height: 50vw;
+  background-color: blue;
+}
+
+.wrap view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap view:last-child {
+  flex-grow: 1;
+}

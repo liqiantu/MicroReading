@@ -29,3 +29,9 @@ export function test1() {
   })
   return promise
 }
+
+export const obj1 = {
+  name: 'lqt',
+  score: 100
+}
+ 

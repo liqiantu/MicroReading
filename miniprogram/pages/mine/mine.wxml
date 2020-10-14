@@ -1,19 +1,29 @@
 <view class="wrap">
-	<view class="avatar">
-		<open-data type="userAvatarUrl"></open-data>
-	</view>
-	<open-data type="userNickName" class="name"></open-data>
-	version {{AppVersion}}
-	
-	<!-- <view class="list">
-		<view class="list-item" bindtap="on1Tap">
-			<view class="button">
-				底部弹窗
-			</view>
+	<view id="top">
+		<view class="avatar">
+			<open-data type="userAvatarUrl"></open-data>
 		</view>
-		<view class="list-item" bindtap="onSegmentTap"><text>segment</text></view>
-		<view class="list-item" bindtap="on3Tap"><text>three</text></view>
-	</view> -->
+		<open-data type="userNickName" class="name"></open-data>
+		version {{AppVersion}}
+
+		<view class="list">
+			<view class="list-item" bindtap="on1Tap">
+				<view class="button">
+					底部弹窗
+				</view>
+			</view>
+			<view class="list-item" bindtap="onSegmentTap"><text>segment</text></view>
+			<view class="list-item" bindtap="on3Tap"><text>three</text></view>
+		</view>
+	</view>
+
+	<view style="width: 100%; height: {{bottomH}}px; background-color: lightGray;" class="bottom">
+		<view class="progressBar">
+			<view class="progressBarContent" style="width: {{progressBarWidth}}%"></view>
+		</view>
+		<button bindtap="plusTap">+++</button>
+		<button bindtap="reduceTap">---</button>
+	</view>
 </view>
 
-<x-pop isShow="{{isShow}}"/>
+<x-pop isShow="{{isShow}}" />

@@ -46,3 +46,20 @@
 .list-item text {
   padding-left: 10rpx;
 }
+
+/* .bottomView {
+  width: 100%;
+  background-color: red;
+} */
+
+.progressBar {
+  border: red solid 1rpx;
+  width: 350rpx;
+  height: 40rpx;
+}
+
+.progressBarContent {
+  height: 100%;
+  background-color: blue;
+  transition: all;
+}

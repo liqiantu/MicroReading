@@ -10,22 +10,22 @@ Page({
     scrollViewHeight: 0,
     active: 2,
     tabs: [{
-        title: "Magazine",
+        title: "期刊",
         kind: 2,
         data: []
       },
       {
-        title: "Book",
+        title: "图书",
         kind: 3,
         data: []
       },
       {
-        title: "Audio",
+        title: "音频",
         kind: 5,
         data: []
       },
       {
-        title: "Newspaper",
+        title: "新闻",
         kind: 7,
         data: []
       }]

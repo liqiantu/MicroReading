@@ -109,6 +109,13 @@
 					"id": -1,
 					"name": "pages/example/Demo1/Demo1",
 					"pathName": "pages/example/Demo1/Demo1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/example/pageEx1/pageEx1",
+					"pathName": "pages/example/pageEx1/pageEx1",
 					"scene": null
 				}
 			]
